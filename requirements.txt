@@ -6,11 +6,9 @@ langchain
 langgraph
 langchain-groq
 langchain-community
+langchain-chroma
 chromadb
+langchain-huggingface
 pymysql
 python-dotenv
 mysql-connector-python
-langchain-huggingface
-langchain-community
-langchain-huggingface
-chromadb
