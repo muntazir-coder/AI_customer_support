@@ -9,6 +9,7 @@ langchain-community
 langchain-chroma
 chromadb
 langchain-huggingface
+sentence-transformers
 pymysql
 python-dotenv
 mysql-connector-python
