@@ -7,7 +7,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from langchain_groq import ChatGroq
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_chroma import Chroma
 
 from langgraph.graph import StateGraph, START, END
@@ -29,10 +29,8 @@ llm = ChatGroq(
 
 )
 
-embedding = HuggingFaceEmbeddings(
-
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
-
+embedding = GoogleGenerativeAIEmbeddings(
+    model="gemini-embedding-001"
 )
 
 
