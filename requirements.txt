@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+streamlit
+groq
+langchain
+langgraph
+langchain-groq
+langchain-community
+chromadb
+pymysql
+python-dotenv
