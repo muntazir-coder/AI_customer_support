@@ -12,3 +12,4 @@ pymysql
 python-dotenv
 mysql-connector-python
 langchain-google-genai
+pypdf
