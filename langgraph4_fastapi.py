@@ -26,6 +26,13 @@ from langgraph4_mysql import (
 
 app = FastAPI(title="AI Document Assistant API")
 
+@app.get("/")
+def home():
+    return {
+        "message": "AI Customer Support API is running",
+        "status": "online"
+    }
+
 app.add_middleware(
 
     CORSMiddleware,
