@@ -3,7 +3,7 @@ import requests
 import time
 
 
-API_URL = "https://ai-customer-support-pj65.onrender.com"
+API_URL = "https://ai-customer-support-1-jegx.onrender.com"
 
 
 st.set_page_config(
