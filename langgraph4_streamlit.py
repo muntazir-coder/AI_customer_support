@@ -888,112 +888,52 @@ if question:
         )
 
 
-
-
-
         response = requests.post(
+    f"{API_URL}/chat",
+    json={
+        "question": question,
+        "session_id": st.session_state.session_id
+    },
+    timeout=120
+)
 
-            f"{API_URL}/chat",
+if response.status_code == 200:
 
-            json={
+    answer = response.json().get(
+        "answer",
+        "I don't know."
+    )
 
-                "question":question,
+    status.success("Answer generated")
 
-                "session_id":
+    time.sleep(0.5)
 
-                    st.session_state.session_id
+    status.empty()
 
-            }
+    st.session_state.messages.append(
+        {
+            "role": "assistant",
+            "content": answer
+        }
+    )
 
-        )
+    with st.chat_message("assistant"):
 
+        st.write(answer)
 
+else:
 
+    status.error(
+        f"AI response failed: {response.status_code}"
+    )
 
+    st.code(response.text)
 
-        if response.status_code == 200:
+except Exception as e:
 
-
-
-            answer = response.json().get(
-
-                "answer",
-
-                "I don't know."
-
-            )
-
-
-
-            status.success(
-
-                "Answer generated"
-
-            )
-
-
-
-            time.sleep(0.5)
-
-
-
-            status.empty()
-
-
-
-
-
-            st.session_state.messages.append(
-
-                {
-
-                    "role":"assistant",
-
-                    "content":answer
-
-                }
-
-            )
-
-
-
-            with st.chat_message(
-
-                "assistant"
-
-            ):
-
-
-
-                st.write(
-
-                    answer
-
-                )
-
-
-
-        else:
-
-
-
-            status.error(
-
-                "AI response failed"
-
-            )
-
-
-
-    except Exception as e:
-
-
-
-        status.error(
-
-            "FastAPI connection error"
-
-        )
+    status.error(
+        f"FastAPI connection error: {e}"
+    )
 
 
 
