@@ -4,13 +4,13 @@ from pydantic import BaseModel
 import os
 import shutil
 
-from langgraph4_rag import (
+from rag_new_practics import (
     graph,
     process_pdf,
     del_vs
 )
 
-from langgraph4_mysql import (
+from mysql_new_practics import (
     create_user,
     user_login,
     chat_start,
@@ -25,13 +25,6 @@ from langgraph4_mysql import (
 
 
 app = FastAPI(title="AI Document Assistant API")
-
-@app.get("/")
-def home():
-    return {
-        "message": "AI Customer Support API is running",
-        "status": "online"
-    }
 
 app.add_middleware(
 
