@@ -4,13 +4,13 @@ from pydantic import BaseModel
 import os
 import shutil
 
-from rag_new_practics import (
+from langgraph4_rag.py import (
     graph,
     process_pdf,
     del_vs
 )
 
-from mysql_new_practics import (
+from langgraph4_mysql.py import (
     create_user,
     user_login,
     chat_start,
