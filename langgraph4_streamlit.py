@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import time
 
-API_URL = "https://your-fastapi-app.onrender.com"
+API_URL = "https://ai-customer-support-5.onrender.com"
 
 st.set_page_config(
 
